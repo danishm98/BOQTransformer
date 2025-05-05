@@ -255,6 +255,8 @@ def master(uploaded_file):
             cell.alignment = wrap_text  # Enable text wrapping (again)
     
     
+   
+    # Assuming ws is your worksheet
     table_range = f"A1:F{ws.max_row}"
     table = Table(displayName="Table1", ref=table_range)
     
@@ -272,8 +274,9 @@ def master(uploaded_file):
     ws.add_table(table)
     
     # Ensure the first row is treated as headers
-    for cell in ws["1:1"]:
-        cell.style = 'Pandas'
+    for cell in ws[1]:
+        cell.value = cell.value  # This line ensures the header cells are recognized
+
 
 
     output_file_path = 'download test.xlsx'
