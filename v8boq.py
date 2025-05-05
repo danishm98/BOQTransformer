@@ -256,7 +256,16 @@ def master(uploaded_file):
     
     
    
+       
+    
     # Assuming ws is your worksheet
+    headers = ["Header1", "Header2", "Header3", "Header4", "Header5", "Header6"]
+    
+    # Assign the headers to the first row
+    for col_num, header in enumerate(headers, start=1):
+        ws.cell(row=1, column=col_num, value=header)
+    
+    # Convert the data range to an actual Excel table
     table_range = f"A1:F{ws.max_row}"
     table = Table(displayName="Table1", ref=table_range)
     
@@ -270,12 +279,8 @@ def master(uploaded_file):
     )
     table.tableStyleInfo = style
     
-    # Add the table to the worksheet
     ws.add_table(table)
-    
-    # Ensure the first row is treated as headers
-    for cell in ws[1]:
-        cell.value = cell.value  # This line ensures the header cells are recognized
+
 
 
 
