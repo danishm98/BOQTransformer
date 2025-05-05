@@ -16,19 +16,10 @@ st.title("BOQ Processing Workflow")
 
 uploaded_file = st.file_uploader("Choose an Excel file", type="xlsx")
 def master(uploaded_file):
-    if uploaded_file is not None:
-        # Load the uploaded file into a pandas DataFrame
-        df = pd.read_excel(uploaded_file)
-        
-    
-        st.write("Data from the uploaded file:")
-        st.dataframe(df)
-    
-        # Save the uploaded file to a temporary path
-        file_path = 'uploaded_file.xlsx'
-        df.to_excel(file_path, index=False)
-
-
+    #if uploaded_file is not None:
+        
+        excel_file = uploaded_file
+        file_path = load_workbook(excel_file, data_only=True)
 
         
         
@@ -273,12 +264,40 @@ def master(uploaded_file):
         )
         table.tableStyleInfo = style
         ws.add_table(table)
-        
+
+        output_file_path = 'download test.xlsx'
         # Save the final formatted Excel file
         wb.save(output_file_path)
         print(f"Output saved to {output_file_path}")
+        updated_excel_path = "updated_excel.xlsx"
+        
+        return updated_excel_path
+    #else:
+    #    st.info("Please upload the BOQ Excel file to proceed.")
+
+excel_file = st.file_uploader("Select BOQ Excel File", type=["xlsx"])
+
+if excel_file:
+    # Read Excel file directly from the uploaded file
+    excel_data = io.BytesIO(excel_file.getbuffer())
+    
+    updated_excel_path = master(excel_data)
+    
+    # Load the updated presentation
+    with open(updated_excel_path, "rb") as f:
+        output_excel = io.BytesIO(f.read())
+    
+    st.success(f"File updated successfully! Download below")
+    st.download_button(
+        label="Download Updated Excel",
+        data=output_excel,
+        file_name="Updated formatted BOQ with NRM predictions.pptx"
+    )
 
 st.markdown("""
 1. Ma
+2.
+3.
+4.
 5. If you face any issues or have questions, reach out to: Danish Memon
 """)
