@@ -271,9 +271,9 @@ def master(uploaded_file):
     # Save the final formatted Excel file
     wb.save(output_file_path)
     print(f"Output saved to {output_file_path}")
-    updated_excel_path = "updated_excel.xlsx"
+    #updated_excel_path = "updated_excel.xlsx"
     
-    return updated_excel_path
+    return output_file_path
     #else:
     #    st.info("Please upload the BOQ Excel file to proceed.")
 
