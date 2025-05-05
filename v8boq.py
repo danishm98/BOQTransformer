@@ -293,7 +293,7 @@ if excel_file:
     
     updated_excel_path = master(excel_data)
     
-    # Load the updated presentation
+    # Load the updated excel
     with open(updated_excel_path, "rb") as f:
         output_excel = io.BytesIO(f.read())
     
@@ -301,7 +301,7 @@ if excel_file:
     st.download_button(
         label="Download Updated Excel",
         data=output_excel,
-        file_name="Updated formatted BOQ with NRM predictions.pptx"
+        file_name="Updated formatted BOQ with NRM predictions.xlsx"
     )
 
 
