@@ -254,7 +254,7 @@ def master(uploaded_file):
         for cell in row:
             cell.alignment = wrap_text  # Enable text wrapping (again)
     
-    # Convert the data range to an actual Excel table with headers
+    
     table_range = f"A1:F{ws.max_row}"
     table = Table(displayName="Table1", ref=table_range)
     
@@ -267,7 +267,14 @@ def master(uploaded_file):
         showColumnStripes=True
     )
     table.tableStyleInfo = style
+    
+    # Add the table to the worksheet
     ws.add_table(table)
+    
+    # Ensure the first row is treated as headers
+    for cell in ws["1:1"]:
+        cell.style = 'Pandas'
+
 
     output_file_path = 'download test.xlsx'
     # Save the final formatted Excel file
