@@ -55,10 +55,12 @@ def master(uploaded_file):
     headers = ["Item", "Description", "Unit", "Qty", "Rate", "Amount"]
     ws.append(headers)
     
+
+
+
     # Load the entire Excel file
     xls = pd.ExcelFile(file_path)
     workbook = load_workbook(file_path)
-    sheet = workbook.active
     
     # Unit conversion dictionary
     unit_conversion = {
@@ -98,17 +100,18 @@ def master(uploaded_file):
         "........."  # This is excluded but it may contain values in unit
     ]
     blank_row_counter = 0
+    
     for sheet_name in xls.sheet_names:
-        
-        sheet = xls.book[sheet_name]
+        sheet = workbook[sheet_name]
         if sheet.sheet_state == 'hidden':
             continue
     
-        df = pd.read_excel(xls, sheet_name=sheet_name, header=None)
+        df = pd.read_excel(file_path, sheet_name=sheet_name, header=None, engine='openpyxl')
         print(f"Processing Sheet: {sheet_name}")
         description_row_found = False
         colvalue = -1  
-        description_row_index = -1 
+        description_row_index = -1
+
     
         # Find the header row
         #for index, row in df.iterrows():
