@@ -52,8 +52,7 @@ def master(uploaded_file):
             cell.alignment = wrap_text
     
     # Add headers to the first row
-    headers = ["Item", "Description", "Unit", "Qty", "Rate", "Amount"]
-    ws.append(headers)
+    
     
 
 
@@ -259,8 +258,9 @@ def master(uploaded_file):
        
     
     # Assuming ws is your worksheet
-    headers = ["Header1", "Header2", "Header3", "Header4", "Header5", "Header6"]
     
+    headers = ["Item", "Description", "Unit", "Qty", "Rate", "Amount"]
+    #ws.append(headers)
     # Assign the headers to the first row
     for col_num, header in enumerate(headers, start=1):
         ws.cell(row=1, column=col_num, value=header)
