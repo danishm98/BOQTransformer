@@ -17,8 +17,7 @@ st.title("BOQ Processing Workflow")
 #uploaded_file = st.file_uploader("Choose an Excel file", type="xlsx")
 
 def master(uploaded_file):
-    #if uploaded_file is not None:
-        
+    #if uploaded_file is not None:  
     excel_file = uploaded_file
     file_path = load_workbook(excel_file, data_only=True)
 
