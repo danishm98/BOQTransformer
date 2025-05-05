@@ -234,6 +234,7 @@ def master(uploaded_file):
                     unit_value = unit_conversion[unit_value]
                     
                 qty_value = str(row[3])
+                
                 rate_value = str(row[4])
                 
                 
@@ -296,10 +297,10 @@ def master(uploaded_file):
 
 
 st.markdown("""
-1. Ma
-2.
-3.
-4.
+1. This workflow auto-processes a standard BOQ Excel file into a formatted table, and assigns a predicted NRM (and Category) against each line item.
+2. Preprocessing requirements:
+3. Assumptions:
+4. Instructions: 
 5. If you face any issues or have questions, reach out to: Danish Memon
 """)
 excel_file = st.file_uploader("Select BOQ Excel File", type=["xlsx"])
