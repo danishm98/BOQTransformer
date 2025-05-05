@@ -29,13 +29,13 @@ def master(uploaded_file):
     #output_file_path = 'output_file_bill_Amaala__Stage 2 - Hardscape BoQ Package (IFC cut-off 07.12.2023) RLB ASSESMENT_____Part_2_test,,,,,,,,,,,.xlsx'
     
     # Extract filename without extension
-    base_filename = os.path.basename(file_path)
-    filename_without_extension = os.path.splitext(base_filename)[0][:25]  # Ensure the sheet name is within 31 characters
+    #base_filename = os.path.basename(file_path)
+    #filename_without_extension = os.path.splitext(base_filename)[0][:25]  # Ensure the sheet name is within 31 characters
     
     # Create a new workbook and set the sheet name for the output
     wb = Workbook()
     ws = wb.active
-    ws.title = filename_without_extension
+    #ws.title = filename_without_extension
     
     # Apply column width settings
     ws.column_dimensions['A'].width = 50  # Set ITEM column width
