@@ -124,8 +124,8 @@ def master(uploaded_file):
         for index, row in df.iterrows():
             item_value = str(row[0])
             description_value = row[1]
-            qty_value = row[2]
-            unit_value = str(row[3]).strip()
+            qty_value = row[3]
+            unit_value = str(row[2]).strip()
             rate_value = row[4]
             amount_value = row[5]
             
