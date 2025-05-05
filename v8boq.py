@@ -108,7 +108,9 @@ def master(uploaded_file):
         colvalue = -1  
         description_row_index = -1
 
-
+        sheet = xls.book[sheet_name]
+        if sheet.sheet_state == 'hidden':
+            continue
 
     
         # Find the header row
