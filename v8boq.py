@@ -57,9 +57,11 @@ def master(uploaded_file):
     
 
 
-
-    # Load the entire Excel file
-    xls = pd.ExcelFile(file_path)
+    # --------------------------------------------------------------------------------------------------------------------------------
+    #import pandas as pd
+    #from openpyxl import load_workbook
+    
+    # Load the workbook
     workbook = load_workbook(file_path)
     
     # Unit conversion dictionary
@@ -101,7 +103,7 @@ def master(uploaded_file):
     ]
     blank_row_counter = 0
     
-    for sheet_name in xls.sheet_names:
+    for sheet_name in workbook.sheetnames:
         sheet = workbook[sheet_name]
         if sheet.sheet_state == 'hidden':
             continue
@@ -111,6 +113,7 @@ def master(uploaded_file):
         description_row_found = False
         colvalue = -1  
         description_row_index = -1
+
 
     
         # Find the header row
