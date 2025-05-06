@@ -283,7 +283,10 @@ def master(uploaded_file):
     ws.add_table(table)
 
 
-
+    # ----------------------------------------------------------------------------NOW LOAD THE XGBOOST + PATTERN HYBRID ML MODEL TO ASSIGN NRM + CATEGORY
+    # ----------------------------------------------------------------------------ASSIGN THE NRM + CATEGORIES
+    # ----------------------------------------------------------------------------PROMPT TO ENTER REST OF METADATA
+    # ----------------------------------------------------------------------------FINAL FORMATTED FILE WHICH IS READY FOR POWER BI
 
     output_file_path = 'download test.xlsx'
     # Save the final formatted Excel file
