@@ -282,7 +282,8 @@ def master(uploaded_file):
     
     ws.add_table(table)
 
-
+    # ----------------------------------------------------------------------------FINISH TRAINING THE MODEL ON NEW DATA 
+    # ----------------------------------------------------------------------------INCLUDE THE PATTERN SUPERSET LOGIC ENCODED WITHIN THE MODEL
     # ----------------------------------------------------------------------------NOW LOAD THE XGBOOST + PATTERN HYBRID ML MODEL TO ASSIGN NRM + CATEGORY
     # ----------------------------------------------------------------------------ASSIGN THE NRM + CATEGORIES
     # ----------------------------------------------------------------------------PROMPT TO ENTER REST OF METADATA
