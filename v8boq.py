@@ -298,7 +298,7 @@ def master(uploaded_file):
 
 st.markdown("""
 1. This workflow auto-processes a standard BOQ Excel file into a formatted table, and assigns a predicted NRM (and Category) against each line item.
-2. Preprocessing requirements:
+2. Preprocessing requirements: Ideally, the file name should be under 50 characters.
 3. Assumptions:
 4. Instructions: 
 5. If you face any issues or have questions, reach out to: Danish Memon
